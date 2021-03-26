@@ -1,24 +1,12 @@
-
 def bubbleSort(arrayWord):
 
-    newWordArray = []
 
-    for i in range(len(arrayWord)):
-        beforeLetter = arrayWord[i]
-        print("before " + beforeLetter)
+    for j in range(len(arrayWord) - 1):
         for s in range(len(arrayWord) - 1):
-            afterLetter = arrayWord[s + 1]
-            print("After " + afterLetter)
-            if (beforeLetter < afterLetter):
-                newWordArray.append(beforeLetter)
-                newWordArray.append(afterLetter)
-                break
-            else:
-                newWordArray.append(arrayWord[s + 1])
-                newWordArray.append(arrayWord[i])
-                break
+            if (arrayWord[s] > arrayWord[s+1]):
+                arrayWord[s], arrayWord[s+1] = arrayWord[s+1], arrayWord[s]
 
-    return newWordArray
+    return arrayWord
 
 
 print("Ordena letras em ordem alfabeta")
@@ -29,8 +17,3 @@ for w in word:
     arrayWord.append(w)
 
 print(bubbleSort(arrayWord))
-
-
-
-
-
